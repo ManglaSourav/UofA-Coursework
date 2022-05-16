@@ -1,0 +1,16 @@
+000000000040052d <foo>:
+  40052d:       55                      push   %rbp # push source onto stack (rbp - base pointer) i.e we push the base pointer to the stack to save it for later
+  40052e:       48 89 e5                mov    %rsp,%rbp # move byte to word ( rsp - stack pointer, rbp - base pointer) i.e we copy the value of stack pointer to the base pointer. After this %rbp points to the base of the foo's stack frame
+  400531:       48 83 ec 10             sub    $0x10,%rsp # subtract source from destination i.e allocate space on the stack
+  400535:       c7 45 fc 00 00 00 00    movl   $0x0,-0x4(%rbp) # movl means operands will be long(32 bits for integers) and copy the value to base pointer register. Here, %rbp is called the base register, and -0x4 is the displacement. This is equivalent to %rbp + -0x4. Because the stack grows downwards, subtracting 4 from the base of the current stack frame moves us into the current frame itself, where local variables are stored. This means that this instruction stores 0 at %rbp - 4.
+  40053c:       eb 18                   jmp    400556 <foo+0x29> # tells the CPU to go a labelled instruction
+  40053e:       8b 45 fc                mov    -0x4(%rbp),%eax # move from special purpose %rbp register to general purpose register %eax i.e eax = -0x4(%rbp)
+  400541:       89 c6                   mov    %eax,%esi # move from %eax to %esi i.e esi = eax
+  400543:       bf 04 06 40 00          mov    $0x400604,%edi # move from source to general purpose register i.e edi = $0x400604
+  400548:       b8 00 00 00 00          mov    $0x0,%eax # move from source to general purpose register %eax i.e eax = 0x0
+  40054d:       e8 be fe ff ff          callq  400410 <printf@plt> # call the printf instructions to print the value of i
+  400552:       83 45 fc 01             addl   $0x1,-0x4(%rbp) # add 1 to general purpose register i.e value of i increments by 1
+  400556:       83 7d fc 09             cmpl   $0x9,-0x4(%rbp) # will compare the two registers’ value by subtracting them in an unnamed temporary place and set the flags according to the result, so that you can tell whether $0x9 < -0x4(%rbp) or $0x9 == -0x4(%rbp) or $0x9 > -0x4(%rbp) in either unsigned mode or signed mode
+  40055a:       7e e2                   jle    40053e <foo+0x11> # tells the CPU to go this instruction if less than or equal to
+  40055c:       c9                      leaveq # q refers to quadword, leaveq sets the %rsp to %rbp and then pop top of the stack into %rbp
+  40055d:       c3                      retq # retq jumps back to our return address which is also stored in the stack frame.

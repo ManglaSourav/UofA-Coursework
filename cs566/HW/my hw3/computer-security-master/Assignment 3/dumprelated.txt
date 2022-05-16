@@ -1,0 +1,39 @@
+2025 - cmp
+2fe5 - cmp
+19bd	- cmp
+3112 - breaks here
+0x5555555570fd
+
+How do I remove an instruction
+run 12
+1234800000 - Jan 15 1970
+
+
+19bd
+
+
+1568299606
+
+rax            0x5d7a5138       1568297272
+rbx            0x0      0
+rcx            0x18     24
+rdx            0x1264c  75340
+rsi            0x0      0
+rdi            0x7fffffffe420   140737488348192 - rax
+rbp            0x7fffffffe6a0   0x7fffffffe6a0
+rsp            0x7fffffffe2b0   0x7fffffffe2b0
+r8             0x5d7a5138       1568297272
+r9             0x2      2
+r10            0x1      1
+r11            0x0      0
+r12            0x555555554cd0   93824992234704
+r13            0x7fffffffe800   140737488349184
+r14            0x0      0
+r15            0x0      0
+rip            0x555555556009   0x555555556009 <o+3739>
+eflags         0x206    [ PF IF ]
+cs             0x33     51
+ss             0x2b     43
+ds             0x0      0
+es             0x0      0
+fs             0x0      0

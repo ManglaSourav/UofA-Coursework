@@ -1,0 +1,3 @@
+We both have collaborated for the common parts and our contribution is as follows:
+Prathyusha - 50% contribution. Worked on DES CTR mode
+Wang - 50% contribution. Worked on DES ECB mode

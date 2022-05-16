@@ -1,0 +1,12 @@
+FIRSTNAME: Prathyusha
+LASTNAME:  Butti
+EMAILADDRESS: pbutti@email.arizona.edu
+UNDERGRADUATE/MASTERS/PHD : M
+TOOLS: Ghidra, gdb
+TECHNIQUES : reverse engineering, gdb debugging
+TIME :  10 hours
+DIFFICULTY : 8
+CHALLENGES: To learn the gdb debugging process as I'm completely new to this. I had to figure out from scratch the appropriate instructions to use and how to check the register values at all levels and then modify it properly.
+COMMENTS: It was difficult as I'm new to this gdb debugging process. I enjoyed it and was anxious as well. If I miss one step I had to repeat the entire process again from the beginning. 
+
+PS: For the file I have submitted you might have to change the permissions for it to execute (chmod a+x Assignment_3) and then run it as it is a binary file.

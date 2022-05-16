@@ -1,0 +1,92 @@
+************************************************************
+* 1) Opaque Predicates
+************************************************************
+tigress --Environment=x86_64:Linux:Gcc:4.6 --Seed=0 \
+   --Transform=InitEntropy \
+      --InitEntropyKinds=vars \
+   --Transform=InitOpaque \
+      --Functions=main\
+      --InitOpaqueCount=2\
+      --InitOpaqueStructs=list,array \
+   --Transform=AddOpaque\
+      --Functions=fib\
+      --AddOpaqueKinds=question \
+      --AddOpaqueCount=10 \
+    --out=fib1.c fib.c 
+
+************************************************************
+* 2) Flatten
+************************************************************
+tigress --Environment=x86_64:Linux:Gcc:4.6 \
+        --Seed=42 \
+        --Transform=InitOpaque \
+           --Functions=main \
+        --Transform=Flatten \
+           --FlattenDispatch=switch \
+           --FlattenOpaqueStructs=array \
+           --FlattenObfuscateNext=false \
+           --FlattenSplitBasicBlocks=false \
+           --Functions=fib \
+     --out=fib2.c fib.c 
+
+************************************************************
+* 3) Virtualize
+************************************************************
+tigress --Environment=x86_64:Linux:Gcc:4.6\
+   --Transform=Virtualize\
+      --Functions=fib\
+      --VirtualizeDispatch=switch\
+   --out=fib3a.c fib.c
+
+tigress --Environment=x86_64:Linux:Gcc:4.6\
+   --Transform=Virtualize\
+      --Functions=fib\
+      --VirtualizeDispatch=switch\
+      --VirtualizeSuperOpsRatio=2.0 \
+      --VirtualizeMaxMergeLength=10 \
+   --out=fib3.c fib.c
+
+************************************************************
+* 4) Virtualize (2 levels)
+************************************************************
+tigress --Environment=x86_64:Linux:Gcc:4.6\
+   --Transform=Virtualize \
+      --Functions=fib \
+      --VirtualizeDispatch=switch\
+   --Transform=Virtualize\
+      --Functions=fib \
+      --VirtualizeDispatch=indirect \
+   --out=fib4.c fib.c
+
+************************************************************
+* 5) Encoding Arithmetic Operators
+************************************************************
+tigress --Environment=x86_64:Linux:Gcc:4.6\
+   --Transform=Virtualize \
+      --Functions=fib \
+      --VirtualizeDispatch=switch\
+   --Transform=EncodeArithmetic \
+      --Functions=fib \
+   --out=fib5.c fib.c
+
+************************************************************
+* 6) Dynamic Obfuscation
+************************************************************
+tigress --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=JitDynamic \
+      --Functions=fib \
+         --JitDynamicCodecs=xtea \
+         --JitDynamicDumpCFG=false \
+         --JitDynamicBlockFraction=%50 \
+         --out=fib6.c fib.c
+
+************************************************************
+* 7) Branch Functions
+************************************************************
+tigress --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=InitBranchFuns \
+      --InitBranchFunsCount=1 \
+   --Transform=AntiBranchAnalysis \
+      --AntiBranchAnalysisKinds=branchFuns \
+      --Functions=fib \
+   --out=fib7.c fib.c

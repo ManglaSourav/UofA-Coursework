@@ -1,0 +1,40 @@
+all:	out1.c out2.c out3.c
+out1.c:	program.c
+	tigress	--Environment=x86_64:Linux:Gcc:4.8\
+    --Transform=Virtualize \
+        --Functions=encrypt \
+        --VirtualizeDispatch=switch\
+    --Transform=EncodeArithmetic \
+        --Functions=* --Exclude=main  \
+   --out=out1.c program.c
+	gcc -o out1 out1.c
+out2.c:	program.c
+	tigress --Environment=x86_64:Linux:Gcc:4.8 --Seed=0 \
+    --Transform=InitEntropy \
+        --InitEntropyKinds=vars \
+    --Transform=InitOpaque \
+        --Functions=encrypt\
+        --InitOpaqueCount=2\
+        --InitOpaqueStructs=list,array \
+    --Transform=AddOpaque\
+        --Functions=* --Exclude=main  \
+        --AddOpaqueKinds=question \
+        --AddOpaqueCount=10 \
+    --out=out2.c program.c
+	gcc -o out2 out2.c 
+out3.c:	program.c
+	tigress --Environment=x86_64:Linux:Gcc:4.8 \
+    --Verbosity=1 \
+    --Transform=InitEntropy \
+        --Functions=encrypt \
+    --Transform=InitOpaque \
+        --Functions=encrypt \
+        --InitOpaqueCount=2 \
+        --InitOpaqueStructs=list,array \
+    --Transform=Flatten \
+        --Functions=aes_mixColumns,aes_mixColumns_inv,aes_expandEncKey,aes_expandDecKey,aes256_init,aes256_done,aes256_encrypt_ecb,aes256_decrypt_ecb,gf_log \
+        --FlattenObfuscateNext=true \
+        --FlattenDispatch=switch  \
+    --Transform=CleanUp --CleanUpKinds=annotations \
+    --out=out3.c program.c
+	gcc -o out3 out3.c

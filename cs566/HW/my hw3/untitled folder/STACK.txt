@@ -1,0 +1,65 @@
+08048390 <__libc_start_main@plt>:
+ 8048390:	ff 25 18 a0 04 08    	jmp    DWORD PTR ds:0x804a018
+ 8048396:	68 18 00 00 00       	push   0x18
+ 804839b:	e9 b0 ff ff ff       	jmp    8048350 <_init+0x2c>
+
+080483a0 <fopen@plt>:
+ 80483a0:	ff 25 1c a0 04 08    	jmp    DWORD PTR ds:0x804a01c
+ 80483a6:	68 20 00 00 00       	push   0x20
+ 80483ab:	e9 a0 ff ff ff       	jmp    8048350 <_init+0x2c>
+
+Disassembly of section .plt.got:
+
+080483b0 <.plt.got>:
+ 80483b0:	ff 25 fc 9f 04 08    	jmp    DWORD PTR ds:0x8049ffc
+ 80483b6:	66 90                	xchg   ax,ax
+
+Disassembly of section .text:
+
+080483c0 <_start>:
+ 80483c0:	31 ed                	xor    ebp,ebp
+ 80483c2:	5e                   	pop    esi
+--
+ 80483dc:	e8 af ff ff ff       	call   8048390 <__libc_start_main@plt>
+ 80483e1:	f4                   	hlt    
+ 80483e2:	66 90                	xchg   ax,ax
+ 80483e4:	66 90                	xchg   ax,ax
+ 80483e6:	66 90                	xchg   ax,ax
+ 80483e8:	66 90                	xchg   ax,ax
+ 80483ea:	66 90                	xchg   ax,ax
+ 80483ec:	66 90                	xchg   ax,ax
+ 80483ee:	66 90                	xchg   ax,ax
+
+080483f0 <__x86.get_pc_thunk.bx>:
+ 80483f0:	8b 1c 24             	mov    ebx,DWORD PTR [esp]
+ 80483f3:	c3                   	ret    
+ 80483f4:	66 90                	xchg   ax,ax
+ 80483f6:	66 90                	xchg   ax,ax
+ 80483f8:	66 90                	xchg   ax,ax
+ 80483fa:	66 90                	xchg   ax,ax
+ 80483fc:	66 90                	xchg   ax,ax
+ 80483fe:	66 90                	xchg   ax,ax
+
+08048400 <deregister_tm_clones>:
+--
+080484da <main>:
+ 80484da:	8d 4c 24 04          	lea    ecx,[esp+0x4]
+ 80484de:	83 e4 f0             	and    esp,0xfffffff0
+ 80484e1:	ff 71 fc             	push   DWORD PTR [ecx-0x4]
+ 80484e4:	55                   	push   ebp
+ 80484e5:	89 e5                	mov    ebp,esp
+ 80484e7:	51                   	push   ecx
+ 80484e8:	81 ec 14 02 00 00    	sub    esp,0x214
+ 80484ee:	83 ec 08             	sub    esp,0x8
+ 80484f1:	68 d0 85 04 08       	push   0x80485d0
+ 80484f6:	68 d2 85 04 08       	push   0x80485d2
+ 80484fb:	e8 a0 fe ff ff       	call   80483a0 <fopen@plt>
+ 8048500:	83 c4 10             	add    esp,0x10
+ 8048503:	89 45 f4             	mov    DWORD PTR [ebp-0xc],eax
+ 8048506:	ff 75 f4             	push   DWORD PTR [ebp-0xc]
+ 8048509:	68 05 02 00 00       	push   0x205
+ 804850e:	6a 01                	push   0x1
+ 8048510:	8d 85 ef fd ff ff    	lea    eax,[ebp-0x211]
+ 8048516:	50                   	push   eax
+ 8048517:	e8 44 fe ff ff       	call   8048360 <fread@plt>
+ 804851c:	83 c4 10             	add    esp,0x10
