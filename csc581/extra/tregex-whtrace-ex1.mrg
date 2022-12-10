@@ -1,0 +1,20 @@
+( (SQ (VBZ Does)
+    (NP-SBJ (PRP$ our) (NN society))
+    (VP (VB have)
+      (NP
+        (NP
+          (NP (DT a) (JJ runaway) (, ,) (JJ uncontrollable) (NN growth))
+          (PP (IN of)
+            (NP (NN technology)))
+          (SBAR
+            (WHNP-1 (WDT which))
+            (S
+              (NP-SBJ (-NONE- *T*-1))
+              (VP (MD may)
+                (VP (VB end)
+                  (NP (PRP$ our) (NN civilization)))))))
+        (, ,)
+        (CC or)
+        (NP (DT a) (JJ normal) (, ,) (JJ healthy) (NN growth))))
+    (. ?) (. ?)))
+

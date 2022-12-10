@@ -1,0 +1,87 @@
+(base) ling581-22$ swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.2.4)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- [hw11].
+true.
+
+?- parse(Tree, [john,won,the,race], []).
+false.
+
+?- [hw11].
+true.
+
+?- parse(Tree, [john,won,the,race], []).
+Tree = s(np(nnp(john)), vp(vbd(win+ed), np(dt(the), nn(race)))) ;
+false.
+
+?- parse(Tree, [john,won,the,race], []).
+Tree = s(np(nnp(john)), vp(vbd(win+ed), np(dt(the), nn(race)))) .
+
+?- [hw11].
+true.
+
+?- parse(Tree, [mary,won,the,race], []).
+Tree = s(np(nnp(mary)), vp(vbd(win+ed), np(dt(the), nn(race)))) .
+
+?- parse(Tree, [the,race,won,john], []).
+Tree = s(np(dt(the), nn(race)), vp(vbd(win+ed), np(nnp(john)))) ;
+false.
+
+?- parse(Parse, Sentence, []).
+Parse = s(np(dt(the), nn(race)), vp(vbd(win+ed), np(dt(the), nn(race)))),
+Sentence = [the, race, won, the, race] ;
+Parse = s(np(dt(the), nn(race)), vp(vbd(win+ed), np(nnp(john)))),
+Sentence = [the, race, won, john] ;
+Parse = s(np(dt(the), nn(race)), vp(vbd(win+ed), np(nnp(mary)))),
+Sentence = [the, race, won, mary] ;
+Parse = s(np(dt(the), nn(race)), vp(vbd(win+ed), np(nnp('John')))),
+Sentence = [the, race, won, 'John'] ;
+Parse = s(np(nnp(john)), vp(vbd(win+ed), np(dt(the), nn(race)))),
+Sentence = [john, won, the, race] ;
+Parse = s(np(nnp(john)), vp(vbd(win+ed), np(nnp(john)))),
+Sentence = [john, won, john] ;
+Parse = s(np(nnp(john)), vp(vbd(win+ed), np(nnp(mary)))),
+Sentence = [john, won, mary] ;
+Parse = s(np(nnp(john)), vp(vbd(win+ed), np(nnp('John')))),
+Sentence = [john, won, 'John'] ;
+Parse = s(np(nnp(mary)), vp(vbd(win+ed), np(dt(the), nn(race)))),
+Sentence = [mary, won, the, race] ;
+Parse = s(np(nnp(mary)), vp(vbd(win+ed), np(nnp(john)))),
+Sentence = [mary, won, john] ;
+Parse = s(np(nnp(mary)), vp(vbd(win+ed), np(nnp(mary)))),
+Sentence = [mary, won, mary] ;
+Parse = s(np(nnp(mary)), vp(vbd(win+ed), np(nnp('John')))),
+Sentence = [mary, won, 'John'] ;
+Parse = s(np(nnp('John')), vp(vbd(win+ed), np(dt(the), nn(race)))),
+Sentence = ['John', won, the, race] ;
+Parse = s(np(nnp('John')), vp(vbd(win+ed), np(nnp(john)))),
+Sentence = ['John', won, john] ;
+Parse = s(np(nnp('John')), vp(vbd(win+ed), np(nnp(mary)))),
+Sentence = ['John', won, mary] ;
+Parse = s(np(nnp('John')), vp(vbd(win+ed), np(nnp('John')))),
+Sentence = ['John', won, 'John'].
+
+?- findall(Sentence,parse(_, Sentence, []), List), length(List,N).
+List = [[the, race, won, the, race], [the, race, won, john], [the, race, won, mary], [the, race, won, 'John'], [john, won, the, race], [john, won, john], [john, won|...], [john|...], [...|...]|...],
+N = 16.
+
+?- parse(Tree, [the,race,won], []).
+false.
+
+?- parse(Tree, [won,the,race], []).
+false.
+
+?- parse(Tree, [won], []).
+false.
+
+?- vp(Tree, [won,the,race], []).
+Tree = vp(vbd(win+ed), np(dt(the), nn(race))) .
+
+?- np(Tree, [the,race], []).
+Tree = np(dt(the), nn(race)) ;
+false.

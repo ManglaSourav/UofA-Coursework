@@ -1,0 +1,59 @@
+( (S
+    (NP-SBJ (PRP$ Their) (NN kind))
+    (VP (VBD created)
+      (NP
+        (NP
+          (NP (DT an) (NNP American) (NN culture))
+          (ADJP (JJ superior)
+            (PP (TO to)
+              (NP
+                (NP (DT any))
+                (PP (IN in)
+                  (NP (DT the) (NN world)))))))
+        (, ,)
+        (NP
+          (NP (DT an) (JJ industrial)
+            (CC and)
+            (JJ technological) (NN culture))
+          (SBAR
+            (WHNP-1 (WDT which))
+            (S
+              (NP-SBJ (-NONE- *T*-1))
+              (VP (VBD penetrated)
+                (NP (NNP Russia))
+                (SBAR-ADV (IN as)
+                  (S
+                    (NP-SBJ (PRP it))
+                    (VP (VBD did)
+                      (NP
+                        (NP (RB almost) (DT every) (NN corner))
+                        (PP (IN of)
+                          (NP (DT the) (NN earth)))))))
+                (PP (IN without)
+                  (NP
+                    (NP
+                      (NP (DT a) (NN nickel))
+                      (PP (IN from)
+                        (NP (DT the) (NNP Federal) (NN treasury))))
+                    (CC or)
+                    (NP
+                      (NP (DT a) (JJ single) (JJ governmental) (NN specialist))
+                      (SBAR
+                        (WHNP-2 (-NONE- 0))
+                        (S
+                          (NP-SBJ (-NONE- *T*-2))
+                          (VP (TO to)
+                            (VP
+                              (VP (VB contrive)
+                                (NP (NNS directives)))
+                              (CC or)
+                              (VP (VB program)
+                                (NP
+                                  (NP (DT a) (NN series))
+                                  (PP (IN of)
+                                    (NP
+                                      (NP (NNS consultations))
+                                      (PP (IN of)
+                                        (NP (JJ interested) (NNS agencies))))))))))))))))))))
+    (. .)))
+
