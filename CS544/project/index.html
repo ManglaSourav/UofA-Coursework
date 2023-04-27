@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PolluViz</title>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" defer src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="flex-container">
+    <div class="flex-container" style="float:left; width:70%">
+
+        <div class="row flex-container">
+            <div class='item' id="Plot1"></div>
+            <div class='item' id="Plot2"></div>
+        </div>
+        <div class="row flex-container">
+            <div class='item' id="Plot3"></div>
+            <div class='item' id='Plot4'></div>
+        </div>
+        <div id="tooltip" class="hidden">
+            <p><span id="value"> </span></p>
+        </div>
+    </div>
+
+    <div class='flex-container' style="float:right; width:30%; border: 1px; ">
+        <div class="left-shift">
+            <h2>Compare Countries</h2>
+            <p>Enter the name of the countries you want to compare</p>
+            <div class="item2 flex-container">
+                <div class="row fullWidth">
+                    <input id="myInput1" type="text" name="myCountry" placeholder="County">
+                    <button id='search_btn1'> Search </button>
+                    <button id='clear_btn'> Clear </button>
+
+                </div>
+                <div class="row">
+                    <table id="table1">
+                        <!-- <td class="borderRemove" id="colHeader"></td> -->
+                        <tr>
+
+                            <th>
+                                County
+                            </th>
+                            <th>
+                                Income
+                            </th>
+                            <th>
+                                Population
+                            </th>
+                            <th>
+                                MaxAQI
+                            </th>
+                            <th>
+                                PM2.5
+                            </th>
+                            <th>
+                                Commute
+                            </th>
+                            <th>
+                                NO2
+                            </th>
+                            <th>
+                                CO
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Attributes Used</h2>
+            <li><strong> Income (USD)</strong> - Median Income in the county. </li>
+
+            <li><strong>Population</strong> - Number of people living the county.</li>
+
+            <li><strong>MaxAQI</strong> - Air Quality Index</li>
+
+            <li><strong>Carbon Monoxide</strong> - Amount Carbon present in part per billion (PPB) </li>
+
+            <li><strong>Commute</strong> (People on road) </li>
+
+            <li><strong>PM2.5</strong> - Fine inhalable particles, with diameters that are generally 2.5 micrometers
+                and smaller
+                measured as micro grams/cubic meter</li>
+
+            <li><strong>NO2</strong> - Amout of NO2 in the air measured in parts per billion (ppb) or micrograms per
+                cubic meter
+                (μg/m3)</li>
+        </div>
+    </div>
+
+</body>
+
+</html>
