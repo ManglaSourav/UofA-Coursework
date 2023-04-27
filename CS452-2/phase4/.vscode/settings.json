@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "ostream": "c",
+    "__mutex_base": "c",
+    "mutex": "c",
+    "complex": "c",
+    "phase4_usermode.h": "c",
+    "ios": "c",
+    "__config": "c",
+    "chrono": "c"
+  }
+}
