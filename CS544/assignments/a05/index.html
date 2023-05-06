@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="vtk.js"></script>
+  <script src="d3.js"></script>
+  <script src="volren.js"></script>
+</head>
+
+<body>
+
+  <div>
+    <input type="file" id="loadData">
+    <button id="sequential">Sequential</button>
+    <button id="diverging">Diverging</button>
+    <button id="categorical">Categorical</button>
+  </div>
+
+  <div>
+    <div id="volren"></div>
+    <div id="tfunc"></div>
+  </div>
+  <div style="width:70vw; padding:10px">
+    <h4>Question 1</h4>
+    <div>
+      Choropleth maps are used to display data on a geographic area by shading or coloring each region based on a
+      specific variable.
+      One possible setting where one might prefer to use a choropleth is when the data being presented is continuous and
+      distributed evenly over the geographic regions. For instance, a choropleth map can be effective in displaying
+      population density by state or county, where each region is shaded to represent the density of the population.
+      Choropleth map provides an accurate representation of the data
+      across the geographic area.
+      <br />
+      <br />
+      Cartograms are used to convey information by distorting the size and shape of the regions based on the data.
+      Cartograms can be effective when the data being presented is highly variable and not evenly distributed over the
+      geographic regions. For example, a cartogram can be useful in displaying the results of a presidential election,
+      where
+      the size of the state or county is distorted based on the number of votes. In this case, the cartogram provides a
+      clear visual representation of the results.
+    </div>
+    <h4>Question 2</h4>
+    <div>
+      The ambiguous case occurs when a contour line passes through a grid cell at a diagonal angle, and the values of
+      the
+      neighboring cells are such that the algorithm cannot uniquely determine the correct configuration of line segments
+      to
+      generate. This results in a situation where the algorithm can generate multiple possible configurations of line
+      segments
+      that all approximate the same contour line, which can lead to ambiguity and inconsistency in the resulting output.
+      <br />
+      One possible fix is to modify the input data by adding small amounts of noise to break up the symmetry and prevent
+      the ambiguous case
+      from occurring. This approach can be effective but may also introduce additional noise into the data.
+    </div>
+    <h4>Question 3</h4>
+    <div>
+      Sequential color transfer function works well when there is a smooth transition between different scalar values in
+      the field means If we want to demonstrate how the data gradually changes.
+      <br />
+      A diverging color transfer function can be useful when the data has a center point and ranges in both positive and
+      negative values.
+      <br />
+      A categorical color transfer function is useful when the data is unordered and consists of discrete categories.
+      This color transfer function can be used to represent different materials or structures in the field, such as
+      different
+      rock formations in a geological simulation.
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="a05.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="d3.js"></script>
+  <script src="cars.js"></script>
+</head>
+
+<body>
+  <div id="pcplot"></div>
+  <script src="a03.js"></script>
+
+
+  <div style="width:70vw">
+    <h4>Question 1</h4>
+    <div>
+      a. onClick
+      <br />
+      Action: Click on a label
+      <br />
+      Target: Swapping the axis and the lebel with immediate right axis and label with exception of the rightmost axis
+      and label.
+      <br />
+      By performing this action, Users can look for patterns in the lines between two variables by swapping the axes.
+      <br />
+      <br />
+      b. onMouseOver
+      <br />
+      Action: Hover mouse over label
+      <br />
+      Target: Bolding the label and changing the color of all polylines to reflect a color scale designed for that
+      axis.
+      <br />
+      By performing this action, Users can look for patterns in the lines for a single variable with other variables.
+      <br />
+      <br />
+      c. Brushing
+      <br />
+      Action: Brush over axes
+      <br />
+      Target: select range of values for each axis
+      <br />
+      By performing this action, Users can look for patterns showing only the points that fall within the selected range
+      of values between axes.
+      <br />
+
+
+    </div>
+    <h4>Question 2</h4>
+    <div>
+      I selected colors for a parallel coordinates plot that are easily distinguishable from
+      each
+      other. This is important because the purpose of a parallel coordinates plot is to show the relationships between
+      different variables, and using colors that are too similar can make it difficult to distinguish between them.
+      I used a default color scheme for the parallel coordinates plot, but I also added a color scale for each axis for
+      OnMouseOver event as it is required in the specs.
+
+    </div>
+    <h4>Question 3</h4>
+    <div>
+      One advantage of parallel coordinates over scatterplot matrices is that parallel coordinates can effectively
+      handle a
+      large number of variables. In a scatterplot matrix, each variable is plotted against every other variable, which
+      can
+      quickly become overwhelming and difficult to interpret as the number of variables increases.
+      <br />
+      One disadvantage of parallel coordinates compared to scatterplot matrices is that parallel coordinates can be more
+      difficult to read and interpret when the range of the variables differs significantly. In a scatterplot matrix,
+      each
+      variable is plotted on its own scale, which allows for easy comparison between variables.
+
+    </div>
+  </div>
+
+</body>
+
+</html>

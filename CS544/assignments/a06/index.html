@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="vtk.js"></script>
+  <script src="d3.js"></script>
+  <script src="flowvis.js"></script>
+</head>
+
+<body>
+  <div>
+    <input type="file" id="loadData">
+    <select id="pos">
+      <option value="Uniform">Uniform</option>
+      <option value="Random">Random</option>
+    </select>
+    <select id="vector">
+
+      <option value="Glyphs">Glyphs</option>
+      <option value="Streamline">Streamline</option>
+    </select>
+  </div>
+  <div id="vfplot"></div>
+
+  <div style="width:70vw; padding:10px">
+    <h4>Question 1</h4>
+    <div>
+      Size and color are representing the magnitude of a vector. Orientation of the shape representing the direction of
+      a vector. Size and color are used as visual channels particularly for representing magnitude because they
+      can be directly and accurately measured by the human visual system. By using different sizes of glyphs to
+      represent different magnitudes of a
+      vector
+      field, we can create a clear and intuitive visual representation of the data.
+      Color is also useful for highlighting spatial patterns in the data that may not be immediately apparent from other
+      visual channels. Like, we can use a color scale to highlight regions of high or low magnitude in the vector
+      field.
+      <br />
+      By aligning the shape of a glyph with the direction of the vector field at a point, we can create a clear and
+      intuitive
+      representation of the direction of the vector. Also, allowing us to visually trace the direction of the vector
+      field across the flow domain.
+    </div>
+
+    <h4>Question 2</h4>
+    <div>
+      Isocontours can divide into two different portions, come together as two independent contours, or reconnect with
+      themselves to form a single closed contour at critical points that are saddles in two dimensions.
+
+    </div>
+    <h4>Question 3</h4>
+    <div>
+      The drawback of using a texture-based technique to view flow fields is that the underlying flow topology is
+      inaccurately
+      represented. It could cause ambiguities and distortions in the visualization, making it challenging to
+      differentiate
+      between various forms of flow and difficult to fully understand the depth. But Geometric techniques rely on the
+      visualization of streamlines or other geometric structures to convey flow information.
+
+      <br />
+      The strength of texture-based techniques to represent local changes in flow velocity and direction is their
+      strength.
+      Texture patterns can be created to draw attention to regions of fast or slow flow and to the flow's direction.
+      However, geometric techniques may be less effective at conveying local variations in flow, and can be more
+      computationally
+      expensive to generate.
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="a06.js"></script>
+</body>
+
+</html>

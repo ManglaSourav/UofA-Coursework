@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="d3.js"></script>
+  <script src="svg.js"></script>
+  <script src="scores.js"></script>
+  <title>CSC 544 Assignment 01</title>
+</head>
+
+<body>
+  <div id="div1">
+    <svg width="500" height="500" style="border: 2px solid black">
+
+      <line x1="30" y1="450" x2="450" y2="450" stroke="black"></line>
+      <line x1="50" y1="470" x2="50" y2="50" stroke="black"></line>
+
+      <text x="250" y="490" font-size="15" text-anchor="middle">SATM</text>
+      <text x="20" y="250" font-size="15" text-anchor="middle" transform="rotate(-90, 20, 250)">SATV</text>
+
+      <circle cx="260" cy="215" r="4" fill="orange"></circle>
+      <circle cx="339" cy="275" r="4" fill="orange"></circle>
+      <circle cx="242" cy="285" r="4" fill="orange"></circle>
+      <circle cx="248" cy="225" r="4" fill="orange"></circle>
+      <circle cx="260" cy="220" r="4" fill="orange"></circle>
+      <circle cx="260" cy="265" r="4" fill="orange"></circle>
+      <circle cx="266" cy="225" r="4" fill="orange"></circle>
+      <circle cx="333" cy="245" r="4" fill="orange"></circle>
+      <circle cx="345" cy="290" r="4" fill="orange"></circle>
+      <circle cx="224" cy="210" r="4" fill="orange"></circle>
+
+      <line x1="100" y1="450" x2="100" y2="460" stroke="black"></line>
+      <text x="40" y="470" font-size="10">0</text>
+      <line x1="150" y1="450" x2="150" y2="460" stroke="black"></line>
+      <text x="90" y="470" font-size="10">100</text>
+      <line x1="200" y1="450" x2="200" y2="460" stroke="black"></line>
+      <text x="140" y="470" font-size="10">200</text>
+      <line x1="250" y1="450" x2="250" y2="460" stroke="black"></line>
+      <text x="190" y="470" font-size="10">300</text>
+      <line x1="300" y1="450" x2="300" y2="460" stroke="black"></line>
+      <text x="240" y="470" font-size="10">400</text>
+      <line x1="350" y1="450" x2="350" y2="460" stroke="black"></line>
+      <text x="290" y="470" font-size="10">500</text>
+      <line x1="400" y1="450" x2="400" y2="460" stroke="black"></line>
+      <text x="340" y="470" font-size="10">600</text>
+      <line x1="450" y1="450" x2="450" y2="460" stroke="black"></line>
+      <text x="390" y="470" font-size="10">700</text>
+      <text x="440" y="470" font-size="10">800</text>
+
+      <line x1="50" y1="450" x2="40" y2="450" stroke="black"></line>
+      <text x="30" y="460" font-size="10">0</text>
+      <line x1="50" y1="400" x2="40" y2="400" stroke="black"></line>
+      <text x="30" y="410" font-size="10">100</text>
+      <line x1="50" y1="350" x2="40" y2="350" stroke="black"></line>
+      <text x="30" y="360" font-size="10">200</text>
+      <line x1="50" y1="300" x2="40" y2="300" stroke="black"></line>
+      <text x="30" y="310" font-size="10">300</text>
+      <line x1="50" y1="250" x2="40" y2="250" stroke="black"></line>
+      <text x="30" y="260" font-size="10">400</text>
+      <line x1="50" y1="200" x2="40" y2="200" stroke="black"></line>
+      <text x="30" y="210" font-size="10">500</text>
+      <line x1="50" y1="150" x2="40" y2="150" stroke="black"></line>
+      <text x="30" y="160" font-size="10">600</text>
+      <line x1="50" y1="100" x2="40" y2="100" stroke="black"></line>
+      <text x="30" y="110" font-size="10">700</text>
+      <line x1="50" y1="50" x2="40" y2="50" stroke="black"></line>
+      <text x="30" y="60" font-size="10">800</text>
+    </svg>
+  </div>
+  <div id="div2"> </div>
+  <div id="div3"></div>
+
+  <div style="width:50vw">
+    <div id="question1">
+
+      <h4> Question 1</h4>
+      From the given 500px I used some space(50px) from both axes for labels and ticks. Rest 450px used to plot the
+      scatterplot.
+      To use 450Px vertically on y-axis for SATV, I roughly divided all the scores by two subtracted it by 450 to plot
+      the SATV on the y axis.
+      Since the highest value of SATV is 450(px) and the axis of the svg starts at the upper left corner, I chose to
+      deduct from that number.
+      <br />
+      Same I have left with 450px for SATM on x-axis. I multiplied all of the dataset's values by the result of dividing
+      the SATM by 450.
+      <br />
+      Because I can see the SATV scores projected on the y axis and the SATM scores plotted on the x axis, my
+      representation
+      makes it apparent what the mapping is. And it's clear to me how the two variables relate to one another.
+      <br />
+
+    </div>
+    <div id="question2">
+      <h4> Question 2</h4>
+      Combination of circle radius and color making difficult to read information because alot of data points are
+      overlapping.
+      I believe that utilizing GPA to map color is much more informative. Additionally, the color is
+      more instructive since it makes it simpler to distinguish between the two plots.
+
+    </div>
+    <div id="question3">
+      <h4> Question 3</h4>
+      There are several strategies to prevent overplotting, including lowering the circle's radius and just plotting a
+      proportion of your data. Utilizing various shapes, such as squares or triangles, might aid in reducing
+      overplotting.
+    </div>
+  </div>
+
+</body>
+<script src="plot2.js"></script>
+<script src="plot3.js"></script>
+
+</html>

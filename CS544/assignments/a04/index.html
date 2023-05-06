@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="d3.js"></script>
+  <script src="flare.js"></script>
+  <script src="test-cases.js"></script>
+</head>
+
+<body style="padding: 0; margin: 0">
+  <svg id="svg"></svg>
+  <div style="position: absolute; right: 1em; top: 1em">
+    <button id="size">Size</button>
+    <button id="count">Count</button>
+    <button id="best-size">Best Size</button>
+    <button id="best-count">Best Count</button>
+  </div>
+
+  <div style="width:70vw; padding:20px">
+    <h4>Question 1</h4>
+    <div>
+      In order to show a continuous range of values, a sequential color map utilizes a variety of colors in a certain
+      order.
+      Typically, data with a range of low to high values are represented using this style of color map.
+      <br />
+      A diverging color map, on the other hand, combines two contrasting colors to indicate values that fluctuate around
+      a
+      central point or a reference value. This kind of color map is frequently used to depict data that has a natural
+      midpoint
+      or reference point, such as data that has a natural zero point or data that spans from positive to negative
+      values.
+      <br />
+      I would choose a sequential color scheme since it can clearly show the relative size differences between the
+      categories
+      or subcategories that are being shown. Also, the use of a consistent color scheme makes it easy to compare the
+      sizes of different categories or subcategories, as
+      well as to identify the largest and smallest categories or subcategories.
+    </div>
+    <h4>Question 2</h4>
+    <div>
+      Geometric zooming is a zooming approach that keeps the original appearance of interface visual components while
+      scaling
+      them up or down. In other terms, geometric zooming only enlarges or reduces an object's size without altering its
+      shape
+      or significance.
+      <br />
+      Semantic zooming is a zooming approach where, when the user zooms in or out, the content or meaning of an
+      interface
+      changes. In interfaces that display hierarchical or layered information, such as maps.
+    </div>
+    <h4>Question 3</h4>
+    <div>
+      Scenario where treemaps are a better choice:
+      <br />
+      Suppose We are examining a sizable amount of hierarchically organized data, similar to a directory of files on
+      your
+      computer. The size of each file and folder in the directory, as well as how they are nested inside one another,
+      should
+      be visible. A treemap might be a good option in this situation. A file or folder would be represented by a
+      rectangle in
+      the treemap, and the rectangle's size would correspond to the file or folder's size. To demonstrate the
+      hierarchical
+      links between the files and directories, the rectangles would be nested inside of one another. As a result, it
+      would be
+      simple for us to determine which files and folders are occupying the most space as well as how they are arranged
+      inside
+      the directory.
+      <br />
+      <br />
+      Scenario where node-link diagrams are a better choice:
+      <br />
+      Suppose we are analyzing a social network and want to see how the participants are connected to one another. A
+      node-link
+      diagram would be the best option in this scenario. The diagram's nodes stand in for individual users, while the
+      connections between them signify their connections. The user clusters that are more tightly related to one
+      another
+      might be highlighted in the diagram by how it is established. Using this, we may quickly determine the network's
+      organizational structure, the users that are more important or influential, and the communities that are present.
+
+
+    </div>
+  </div>
+  <script src="a04.js"></script>
+</body>
+
+</html>
